@@ -5,7 +5,7 @@
 #define SIZE 5
 #define MINES 5
 
-// Função para inicializar o tabuleiro
+// FunÃ§Ã£o para inicializar o tabuleiro
 void inicializarTabuleiro(char tabuleiro[SIZE][SIZE], char simbolo) {
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
@@ -14,7 +14,7 @@ void inicializarTabuleiro(char tabuleiro[SIZE][SIZE], char simbolo) {
     }
 }
 
-// Função para colocar minas aleatórias
+// FunÃ§Ã£o para colocar minas aleatÃ³rias
 void colocarMinas(char minas[SIZE][SIZE]) {
     int count = 0;
     while (count < MINES) {
@@ -27,7 +27,7 @@ void colocarMinas(char minas[SIZE][SIZE]) {
     }
 }
 
-// Função para contar minas vizinhas
+// FunÃ§Ã£o para contar minas vizinhas
 int contarMinasProximas(char minas[SIZE][SIZE], int linha, int coluna) {
     int count = 0;
     for (int i = linha - 1; i <= linha + 1; i++) {
@@ -42,7 +42,7 @@ int contarMinasProximas(char minas[SIZE][SIZE], int linha, int coluna) {
     return count;
 }
 
-// Função para mostrar o tabuleiro visível
+// FunÃ§Ã£o para mostrar o tabuleiro visÃ­vel
 void mostrarTabuleiro(char tabuleiro[SIZE][SIZE]) {
     printf("\n   ");
     for (int j = 0; j < SIZE; j++) printf("%d ", j);
@@ -76,16 +76,16 @@ int main() {
     while (!fimDeJogo) {
         mostrarTabuleiro(visivel);
 
-        printf("\nEscolhe uma posição (linha e coluna): ");
+        printf("\nEscolhe uma posicao (linha e coluna): ");
         scanf("%d %d", &linha, &coluna);
 
         if (linha < 0 || linha >= SIZE || coluna < 0 || coluna >= SIZE) {
-            printf("Posição inválida! Tenta novamente.\n");
+            printf("Posicao invalida! Tenta novamente.\n");
             continue;
         }
 
         if (visivel[linha][coluna] != '#') {
-            printf("Já escolheste essa posição!\n");
+            printf("Ja escolheste essa posicao!\n");
             continue;
         }
 
@@ -98,7 +98,7 @@ int main() {
             jogadasRestantes--;
 
             if (jogadasRestantes == 0) {
-                printf("\n Parabéns! Limpaste todas as casas seguras! \n");
+                printf("\n Parabens! Limpaste todas as casas seguras! \n");
                 fimDeJogo = 1;
             }
         }
@@ -115,3 +115,4 @@ int main() {
 
     return 0;
 }
+
